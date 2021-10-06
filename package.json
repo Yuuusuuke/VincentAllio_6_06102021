@@ -1,0 +1,20 @@
+{
+  "name": "vincentallio_6_06102021",
+  "version": "1.0.0",
+  "description": "Créer un site accessible pour une plateforme de photographes",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss --watch ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuuusuuke/VincentAllio_6_06102021.git"
+  },
+  "author": "Vincent Allio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yuuusuuke/VincentAllio_6_06102021/issues"
+  },
+  "homepage": "https://github.com/Yuuusuuke/VincentAllio_6_06102021#readme"
+}
