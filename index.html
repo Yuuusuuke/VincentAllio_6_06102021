@@ -8,7 +8,28 @@
         <link rel="stylesheet" href="public/css/prefixed/style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        
+
     <body>
+        <header class="header">
+            <a href="#" class="header__logo">
+                <img role="img" src="Ressources/logoFisheye.png" alt="Fisheye Home page" />
+            </a>
+            <nav role="navigation" aria-label="photographer categories" class="header__navigation">
+                <a class="header__navigation__tag" onClick="renderFilter('Portrait')">#Portrait</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Art')">#Art</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Fashion')">#Fashion</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Architecture')">#Architecture</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Travel')">#Travel</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Sport')">#Sport</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Animals')">#Animals</a>
+                <a class="header__navigation__tag" onClick="renderFilter('Events')">#Events</a>
+            </nav>
+
+            <h1 class="header__title">Nos photographes</h1>
+        </header>
+
+        <script src="js/main.js"></script>
         
     </body>
 

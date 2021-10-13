@@ -1,0 +1,43 @@
+.header{
+    padding: 42px 7% 0 7%;
+    display: flex;
+
+    &__logo{
+        
+
+        & img{
+            width: 200px;
+            height: 50px;
+        }
+    }
+
+    &__navigation{
+        flex: 1;
+        @include centerElement;
+
+        & a:not(:first-child){
+            margin-left: 5px;
+        }
+
+        & a{
+            font-size: 12px;
+            font-family: "DM Sans";
+            font-weight: 500;
+            color: $colorPrimary;
+
+            border: solid 1px $colorTertiary;
+            border-radius: 20px;
+            padding: 0 3px 0 3px;
+
+            cursor: pointer;
+        }
+        
+    }
+
+    &__title{
+        font-size: 36px;
+        font-weight: 400;
+        font-family: "DM Sans";
+        color: $colorPrimary;
+    }
+}
