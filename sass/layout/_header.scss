@@ -1,13 +1,21 @@
 .header{
     padding: 42px 7% 0 7%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
 
     &__logo{
-        
-
         & img{
             width: 200px;
             height: 50px;
+            object-fit: contain;
+
+            @include for-size("mobile"){
+                width: 150px;
+                height: 37.5px;
+            }
         }
     }
 
@@ -15,11 +23,19 @@
         flex: 1;
         @include centerElement;
 
-        & a:not(:first-child){
+        @include for-size("tablet_portrait"){
+            order: 2;
+            margin-top: 35px;
+        }
+        @include for-size("mobile"){
+            display: none;
+        }
+
+        &__tag:not(:first-child){
             margin-left: 5px;
         }
 
-        & a{
+        &__tag{
             font-size: 12px;
             font-family: "DM Sans";
             font-weight: 500;
@@ -30,6 +46,19 @@
             padding: 0 3px 0 3px;
 
             cursor: pointer;
+
+            @include for-size("mobile"){
+                margin-bottom: 6px;
+            }
+        }
+
+        &--wrap{
+            display: none;
+            flex-wrap: wrap;
+            margin: 35px 10% 0 10%;
+            @include for-size("mobile"){
+                display: flex;
+            }
         }
         
     }
@@ -39,5 +68,9 @@
         font-weight: 400;
         font-family: "DM Sans";
         color: $colorPrimary;
+
+        @include for-size("mobile"){
+            font-size: 14px;
+        }
     }
 }
