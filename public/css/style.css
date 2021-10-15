@@ -51,24 +51,6 @@ a {
     display: none;
   }
 }
-.header__navigation__tag:not(:first-child) {
-  margin-left: 5px;
-}
-.header__navigation__tag {
-  font-size: 12px;
-  font-family: "DM Sans";
-  font-weight: 500;
-  color: #901C1C;
-  border: solid 1px #525252;
-  border-radius: 20px;
-  padding: 0 3px 0 3px;
-  cursor: pointer;
-}
-@media screen and (max-width: 768px) {
-  .header__navigation__tag {
-    margin-bottom: 6px;
-  }
-}
 .header__navigation--wrap {
   display: none;
   flex-wrap: wrap;
@@ -92,6 +74,102 @@ a {
 }
 
 /* Components */
+.tag {
+  font-size: 12px;
+  font-family: "DM Sans";
+  font-weight: 500;
+  color: #901C1C;
+  border: solid 1px #525252;
+  border-radius: 20px;
+  padding: 0 3px 0 3px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.tag:not(:first-child) {
+  margin-left: 5px;
+}
+
 /* Pages */
+#cardsTable {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px 5% 0 5%;
+  justify-content: center;
+}
+@media screen and (max-width: 1577px) {
+  #cardsTable {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 768px) {
+  #cardsTable {
+    justify-content: center;
+    margin-top: 46px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 39px;
+  flex-basis: 33%;
+  max-width: 355px;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+.card > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__image {
+  height: 200px;
+  width: 200px;
+  background: #757575;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.card__name {
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 46.87px;
+  color: #D3573C;
+  text-align: center;
+}
+.card__location {
+  font-family: "DM Sans";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.93px;
+  color: #901C1C;
+}
+.card__description {
+  margin-top: 3px;
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.02px;
+  color: black;
+}
+.card__price {
+  margin-top: 3px;
+  margin-bottom: 6px;
+  font-family: "DM Sans";
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 11.72px;
+  color: #757575;
+}
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=style.css.map */

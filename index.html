@@ -12,34 +12,39 @@
 
     <body>
         <header class="header">
-            <a href="#" class="header__logo">
+            <a href="index.html" class="header__logo">
                 <img role="img" src="Ressources/logoFisheye.png" alt="Fisheye Home page" />
             </a>
             <nav role="navigation" aria-label="photographer categories" class="header__navigation">
-                <a class="header__navigation__tag" onClick="renderFilter('Portrait')">#Portrait</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Art')">#Art</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Fashion')">#Fashion</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Architecture')">#Architecture</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Travel')">#Travel</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Sport')">#Sport</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Animals')">#Animals</a>
-                <a class="header__navigation__tag" onClick="renderFilter('Events')">#Events</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('portrait')">#Portrait</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('art')">#Art</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('fashion')">#Fashion</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('architecture')">#Architecture</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('travel')">#Travel</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('sport')">#Sport</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('animals')">#Animals</a>
+                <a class="header__navigation__tag tag" onClick="renderFilter('events')">#Events</a>
             </nav>
 
-            <h1 class="header__title">Nos photographes</h1>
+            <h1 class="header__title" onClick="displayPhotographer()">Nos photographes</h1>
         </header>
 
         <nav role="navigation" aria-label="photographer categories" class="header__navigation header__navigation--wrap">
-            <a class="header__navigation__tag" onClick="renderFilter('Portrait')">#Portrait</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Art')">#Art</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Fashion')">#Fashion</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Architecture')">#Architecture</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Travel')">#Travel</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Sport')">#Sport</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Animals')">#Animals</a>
-            <a class="header__navigation__tag" onClick="renderFilter('Events')">#Events</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('portrait')">#Portrait</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('art')">#Art</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('fashion')">#Fashion</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('architecture')">#Architecture</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('travel')">#Travel</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('sport')">#Sport</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('animals')">#Animals</a>
+            <a class="header__navigation__tag tag" onClick="renderFilter('events')">#Events</a>
         </nav>
 
+        <main id="cardsTable">
+
+        </main>
+
+        <script src="js/photographers.js"></script>
         <script src="js/main.js"></script>
         
     </body>

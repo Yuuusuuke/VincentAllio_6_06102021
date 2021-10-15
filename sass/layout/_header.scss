@@ -31,27 +31,6 @@
             display: none;
         }
 
-        &__tag:not(:first-child){
-            margin-left: 5px;
-        }
-
-        &__tag{
-            font-size: 12px;
-            font-family: "DM Sans";
-            font-weight: 500;
-            color: $colorPrimary;
-
-            border: solid 1px $colorTertiary;
-            border-radius: 20px;
-            padding: 0 3px 0 3px;
-
-            cursor: pointer;
-
-            @include for-size("mobile"){
-                margin-bottom: 6px;
-            }
-        }
-
         &--wrap{
             display: none;
             flex-wrap: wrap;
