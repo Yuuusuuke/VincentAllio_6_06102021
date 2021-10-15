@@ -20,8 +20,16 @@ window.addEventListener("load", () => {
           buildPhotographers(data.photographers);
           displayAllPhotographers();
       })
-  });
+});
 
+/* Create Photographers object and push them in an array */
+function buildPhotographers(data){
+  data.forEach(element => {
+    photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait));
+  });
+}
+
+/* Display photographers with the filter selected */
 function renderFilter(filter){
   eraseRender(table);
     photographers.forEach(element => {
@@ -48,13 +56,6 @@ function eraseRender(parent){
   }
 }
 
-function buildPhotographers(data){
-  data.forEach(element => {
-    photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait));
-  });
-  
-}
-
 function displayAllPhotographers(){
   eraseRender(table);
   photographers.forEach(element => {
@@ -72,6 +73,7 @@ function displayPhotographer(data){
   var subElement = document.createElement("img");
   subElement.classList.add("card__image");
   subElement.src = "../Ressources/Photographers ID Photos/" + data.getPortrait()
+  subElement.alt = data.getName() + " picture";
   element.appendChild(subElement);
   subElement = document.createElement("h2");
   subElement.classList.add("card__name");
