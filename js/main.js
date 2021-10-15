@@ -72,7 +72,7 @@ function displayPhotographer(data){
   var element = document.createElement("a");
   var subElement = document.createElement("img");
   subElement.classList.add("card__image");
-  subElement.src = "/Ressources/Photographers ID Photos/" + data.getPortrait()
+  subElement.src = "Ressources/Photographers ID Photos/" + data.getPortrait()
   subElement.alt = data.getName() + " picture";
   element.appendChild(subElement);
   subElement = document.createElement("h2");
