@@ -125,6 +125,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 .card__image {
   height: 200px;
