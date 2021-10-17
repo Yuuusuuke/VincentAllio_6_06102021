@@ -15,4 +15,10 @@
     &:not(:first-child){
         margin-left: 5px;
     }
+
+    &--active{
+        background: $colorPrimary;
+        border: solid 1px $colorPrimary;
+        color: white;
+    }
 }

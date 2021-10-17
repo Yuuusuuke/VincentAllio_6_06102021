@@ -88,6 +88,11 @@ a {
 .tag:not(:first-child) {
   margin-left: 5px;
 }
+.tag--active {
+  background: #901C1C;
+  border: solid 1px #901C1C;
+  color: white;
+}
 
 /* Pages */
 #cardsTable {
