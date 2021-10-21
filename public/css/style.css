@@ -79,8 +79,8 @@ a {
   font-family: "DM Sans";
   font-weight: 500;
   color: #901C1C;
-  border: solid 1px #525252;
-  border-radius: 20px;
+  border: solid 0.5px #C4C4C4;
+  border-radius: 12px;
   padding: 0 3px 0 3px;
   margin-bottom: 6px;
   cursor: pointer;
@@ -176,6 +176,74 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.photographerCard {
+  margin: 40px 7% 0 7%;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FAFAFA;
+}
+.photographerCard__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: center;
+}
+.photographerCard__contact {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.photographerCard__contact__button {
+  background: #901C1C;
+  border-radius: 5px;
+  padding: 21px 11px;
+  margin-left: 20px;
+  color: white;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26.04px;
+  cursor: pointer;
+}
+.photographerCard__text {
+  align-self: center;
+}
+.photographerCard__text__name {
+  font-family: "DM Sans";
+  font-size: 64px;
+  font-weight: 400;
+  color: #D3573C;
+  line-height: 83.33px;
+}
+.photographerCard__text__location {
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+  line-height: 31.25px;
+}
+.photographerCard__text__description {
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 400;
+  color: #525252;
+  line-height: 23.44px;
+  margin: 19px 0 19px 0;
+}
+.photographerCard__text__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.photographerCard__text__filters__tag {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */

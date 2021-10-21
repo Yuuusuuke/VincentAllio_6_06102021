@@ -1,0 +1,78 @@
+.photographerCard{
+    margin: 40px 7% 0 7%;
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #FAFAFA;
+
+    &__image{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        align-self: center;
+    }
+
+    &__contact{
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &__button{
+            background: $colorPrimary;
+            border-radius: 5px;
+            padding: 21px 11px;
+            margin-left: 20px;
+
+            color: white;
+            font-family: "DM Sans";
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26.04px;
+
+            cursor: pointer;
+        }
+        
+    }
+
+    &__text{
+        align-self: center;
+        &__name{
+            font-family: "DM Sans";
+            font-size: 64px;
+            font-weight: 400;
+            color: $colorSecondary;
+            line-height: 83.33px;
+        }
+        &__location{
+            font-family: "DM Sans";
+            font-size: 24px;
+            font-weight: 400;
+            color: $colorPrimary;
+            line-height: 31.25px;
+        }
+        &__description{
+            font-family: "DM Sans";
+            font-size: 18px;
+            font-weight: 400;
+            color: $colorTertiary;
+            line-height: 23.44px;
+            margin: 19px 0 19px 0;
+        }
+        &__filters{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            &__tag{
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 23px;
+            }
+        }
+    }
+}
