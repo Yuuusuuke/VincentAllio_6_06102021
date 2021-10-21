@@ -87,6 +87,6 @@ function displayPhotographerHeader(){
 
     element = document.createElement("img");
     element.classList.add("photographerCard__image");
-    element.src = "/Ressources/Photographers ID Photos/" + photographer.getPortrait();
+    element.src = "../Ressources/Photographers ID Photos/" + photographer.getPortrait();
     header.appendChild(element);
 }
