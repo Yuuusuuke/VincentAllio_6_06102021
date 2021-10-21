@@ -7,6 +7,11 @@
 
     background-color: #FAFAFA;
 
+    @include for-size("mobile"){
+        background: white;
+        padding: 0;
+    }
+
     &__image{
         width: 200px;
         height: 200px;
@@ -14,6 +19,11 @@
         object-fit: cover;
 
         align-self: center;
+
+        @include for-size("mobile"){
+            width: 100px;
+            height: 100px;
+        }
     }
 
     &__contact{
@@ -37,6 +47,25 @@
 
             cursor: pointer;
         }
+
+        &--fixed{
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            transform: translate(calc(50vw - 50%));
+
+            padding: 7px 19px;
+            margin: 0;
+
+            @include for-specific-size(1106px){
+                display: block;
+            }
+        }
+
+        @include for-specific-size(1106px){
+            display: none;
+        }
         
     }
 
@@ -48,6 +77,11 @@
             font-weight: 400;
             color: $colorSecondary;
             line-height: 83.33px;
+
+            @include for-size("mobile"){
+                font-size: 36px;
+                line-height: 46.87px;
+            }
         }
         &__location{
             font-family: "DM Sans";
@@ -55,6 +89,11 @@
             font-weight: 400;
             color: $colorPrimary;
             line-height: 31.25px;
+
+            @include for-size("mobile"){
+                font-size: 13px;
+                line-height: 13.93px;
+            }
         }
         &__description{
             font-family: "DM Sans";
@@ -63,6 +102,11 @@
             color: $colorTertiary;
             line-height: 23.44px;
             margin: 19px 0 19px 0;
+
+            @include for-size("mobile"){
+                font-size: 13px;
+                line-height: 16.93px;
+            }
         }
         &__filters{
             display: flex;
@@ -73,7 +117,69 @@
                 font-size: 18px;
                 font-weight: 500;
                 line-height: 23px;
+
+                @include for-size("mobile"){
+                    font-size: 13px;
+                    line-height: 16.93px;
+                }
             }
         }
+    }
+}
+
+.photos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px 7% 0 7%;
+
+    @include for-size("mobile"){
+        margin: 45px 0 0 0;
+    }
+
+    &__image{
+        max-width: 350px;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 5px;
+
+        margin-bottom: 39px;
+        margin-right: 6.5%;
+        flex-basis: 33%;
+
+        @include for-specific-size(1403px){
+            flex-basis: 50%;
+            margin-right: 15px;
+        }
+
+        @include for-specific-size(1255px){
+            margin-left: 15px;
+        }
+
+        @include for-specific-size(1200px){
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include for-specific-size(848px){
+            flex-basis: 100%;
+            max-width: 90%;
+            height: 190px;
+            margin-right: 0;
+        }
+
+        
+    }
+    & :nth-child(3n){
+        margin-right: 0;
+    }
+
+    @include for-specific-size(1255px){
+        justify-content: space-evenly;
+    }
+
+    @include for-specific-size(848px){
+        justify-content: center;
     }
 }

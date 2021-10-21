@@ -9,3 +9,9 @@ $breakpoints: (
         @content;
     }
 }
+
+@mixin for-specific-size($range){
+    @media screen and (max-width: $range){
+        @content;
+    }
+}

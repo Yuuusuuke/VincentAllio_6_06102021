@@ -2,13 +2,9 @@ const query = window.location.search;
 
 const photographerID = new URLSearchParams(query).get('id');
 
-console.log(photographerID);
-
 const dataLink = "../js/data.json";
 
-const table = document.getElementById("cardsTable");
-
-var photographers = [];
+var photographers = [], photos = [];
 
 
 window.addEventListener("load", () => {
@@ -24,23 +20,29 @@ window.addEventListener("load", () => {
         }
       })
       .then((data) => {
-          buildPhotographers(data.photographers);
-          displayPhotographerHeader();
+        buildPhotographers(data.photographers);
+        buildPictures(data.media);
+        const photographer = photographers.find(element => element.id == photographerID);
+        displayPhotographerHeader(photographer);
+
+        displayPictures(photographer.getID(), photos);
       })
 });
 
 /* Create Photographers object and push them in an array */
 function buildPhotographers(data){
-    data.forEach(element => {
-      photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait));
-    });
-  }
+  data.forEach(element => {
+    photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait));
+  });
+}
 
-function displayPhotographerHeader(){
-    const photographer = photographers.find(element => element.id == photographerID);
+function buildPictures(data){
+  data.forEach(element => {
+    photos.push(MediaFactory.createMedia(element.id, element.photographerId, element.title, element.image, element.tags, element.likes, element.date, element.price));
+  });
+}
 
-    console.log(photographer);
-
+function displayPhotographerHeader(photographer){
     const header = document.getElementById("header");
 
     let element = document.createElement("div");
@@ -89,4 +91,26 @@ function displayPhotographerHeader(){
     element.classList.add("photographerCard__image");
     element.src = "../Ressources/Photographers ID Photos/" + photographer.getPortrait();
     header.appendChild(element);
+
+    element = document.createElement("a");
+    element.classList.add("photographerCard__contact__button");
+    element.classList.add("photographerCard__contact--fixed");
+    element.innerHTML = "Contactez-moi";
+    header.appendChild(element);
+}
+
+function displayPictures(photographerID, ListPhoto){
+  console.log(photographerID);
+
+  let location = document.getElementById("photosTable");
+
+  ListPhoto.forEach(element => {
+    if((element.getPhotographerID() == photographerID) && (element.getImage() != undefined)){
+      console.log(element.getImage());
+      let render = document.createElement("img");
+      render.classList.add("photos__image");
+      render.src = "../Ressources/" + photographerID + "/" + element.getImage();
+      location.appendChild(render);
+    }
+  });
 }

@@ -36,6 +36,6 @@ class Media{
     }
 }
 
-const MadiaFactory = {
+const MediaFactory = {
     createMedia: (id, photographer, title, image, tags, likes, date, price) => new Media(id, photographer, title, image, tags, likes, date, price)
 }

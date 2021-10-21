@@ -185,12 +185,24 @@ a {
   justify-content: space-between;
   background-color: #FAFAFA;
 }
+@media screen and (max-width: 768px) {
+  .photographerCard {
+    background: white;
+    padding: 0;
+  }
+}
 .photographerCard__image {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
   align-self: center;
+}
+@media screen and (max-width: 768px) {
+  .photographerCard__image {
+    width: 100px;
+    height: 100px;
+  }
 }
 .photographerCard__contact {
   flex: 1;
@@ -203,12 +215,32 @@ a {
   border-radius: 5px;
   padding: 21px 11px;
   margin-left: 20px;
+  margin-top: 7px;
   color: white;
   font-family: "DM Sans";
   font-size: 20px;
   font-weight: 700;
   line-height: 26.04px;
   cursor: pointer;
+}
+.photographerCard__contact--fixed {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  transform: translate(calc(50vw - 50%));
+  padding: 7px 19px;
+  margin: 0;
+}
+@media screen and (max-width: 1106px) {
+  .photographerCard__contact--fixed {
+    display: block;
+  }
+}
+@media screen and (max-width: 1106px) {
+  .photographerCard__contact {
+    display: none;
+  }
 }
 .photographerCard__text {
   align-self: center;
@@ -220,12 +252,24 @@ a {
   color: #D3573C;
   line-height: 83.33px;
 }
+@media screen and (max-width: 768px) {
+  .photographerCard__text__name {
+    font-size: 36px;
+    line-height: 46.87px;
+  }
+}
 .photographerCard__text__location {
   font-family: "DM Sans";
   font-size: 24px;
   font-weight: 400;
   color: #901C1C;
   line-height: 31.25px;
+}
+@media screen and (max-width: 768px) {
+  .photographerCard__text__location {
+    font-size: 13px;
+    line-height: 13.93px;
+  }
 }
 .photographerCard__text__description {
   font-family: "DM Sans";
@@ -234,6 +278,12 @@ a {
   color: #525252;
   line-height: 23.44px;
   margin: 19px 0 19px 0;
+}
+@media screen and (max-width: 768px) {
+  .photographerCard__text__description {
+    font-size: 13px;
+    line-height: 16.93px;
+  }
 }
 .photographerCard__text__filters {
   display: flex;
@@ -244,6 +294,72 @@ a {
   font-size: 18px;
   font-weight: 500;
   line-height: 23px;
+}
+@media screen and (max-width: 768px) {
+  .photographerCard__text__filters__tag {
+    font-size: 13px;
+    line-height: 16.93px;
+  }
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px 7% 0 7%;
+}
+@media screen and (max-width: 768px) {
+  .photos {
+    margin: 45px 0 0 0;
+  }
+}
+.photos__image {
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+  margin-bottom: 39px;
+  margin-right: 6.5%;
+  flex-basis: 33%;
+}
+@media screen and (max-width: 1403px) {
+  .photos__image {
+    flex-basis: 50%;
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 1255px) {
+  .photos__image {
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .photos__image {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 848px) {
+  .photos__image {
+    flex-basis: 100%;
+    max-width: 90%;
+    height: 190px;
+    margin-right: 0;
+  }
+}
+.photos :nth-child(3n) {
+  margin-right: 0;
+}
+@media screen and (max-width: 1255px) {
+  .photos {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 848px) {
+  .photos {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
