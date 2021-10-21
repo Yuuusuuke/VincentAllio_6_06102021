@@ -74,7 +74,7 @@ function displayPhotographer(data){
 
   /* Image + Name of photographer */
   var element = document.createElement("a");
-  element.href = "/html/photographer.html?id=" + data.getID();
+  element.href = "html/photographer.html?id=" + data.getID();
   var subElement = document.createElement("img");
   subElement.classList.add("card__image");
   subElement.src = "Ressources/Photographers ID Photos/" + data.getPortrait();
