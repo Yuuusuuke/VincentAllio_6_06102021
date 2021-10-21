@@ -4,7 +4,7 @@ const photographerID = new URLSearchParams(query).get('id');
 
 console.log(photographerID);
 
-const dataLink = "/js/data.json";
+const dataLink = "../js/data.json";
 
 const table = document.getElementById("cardsTable");
 
