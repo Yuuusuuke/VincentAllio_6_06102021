@@ -320,8 +320,13 @@ a {
   object-position: top;
   border-radius: 5px;
   margin-bottom: 39px;
-  margin-right: 6.5%;
+  margin-right: 0;
   flex-basis: 33%;
+}
+@media screen and (max-width: 2022px) {
+  .photos__image {
+    margin-right: 6.5%;
+  }
 }
 @media screen and (max-width: 1403px) {
   .photos__image {

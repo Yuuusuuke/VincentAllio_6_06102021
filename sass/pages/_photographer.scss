@@ -145,8 +145,12 @@
         border-radius: 5px;
 
         margin-bottom: 39px;
-        margin-right: 6.5%;
+        margin-right: 0;
         flex-basis: 33%;
+
+        @include for-specific-size(2022px){
+            margin-right: 6.5%;
+        }
 
         @include for-specific-size(1403px){
             flex-basis: 50%;
