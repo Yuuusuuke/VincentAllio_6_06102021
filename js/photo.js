@@ -105,10 +105,38 @@ function displayPictures(photographerID, ListPhoto){
   ListPhoto.forEach(element => {
     if((element.getPhotographerID() == photographerID) && (element.getImage() != undefined)){
       console.log(element.getTitle());
+      let imgbloc = document.createElement("div");
+      imgbloc.classList.add("photos__bloc");
       let render = document.createElement("img");
+
       render.classList.add("photos__image");
       render.src = "../Ressources/" + photographerID + "/" + element.getImage();
-      location.appendChild(render);
+
+      imgbloc.appendChild(render);
+
+      render = document.createElement("div");
+      render.classList.add("photos__description");
+
+      var subrender = document.createElement("p");
+      subrender.classList.add("photos__description__title");
+      subrender.innerHTML = element.getTitle();
+      render.appendChild(subrender);
+
+      subrender = document.createElement("p");
+      subrender.classList.add("photos__description__likes");
+      subrender.innerHTML = element.getLikes();
+      render.appendChild(subrender);
+
+      subrender = document.createElement("i");
+      subrender.classList.add("fas");
+      subrender.classList.add("fa-heart");
+      subrender.classList.add("photos__description__icon");
+      render.appendChild(subrender);
+
+      imgbloc.appendChild(render);
+
+      location.appendChild(imgbloc);
+
     }
   });
 }

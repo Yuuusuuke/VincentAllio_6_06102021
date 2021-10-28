@@ -132,6 +132,10 @@
     margin: 9px 7% 0 7%;
     align-items: center;
 
+    @include for-size("mobile"){
+        display: none;
+    }
+
     &__text{
         font-family: "DM Sans";
         font-size: 18px;
@@ -211,15 +215,12 @@
         margin: 45px 0 0 0;
     }
 
-    &__image{
-        max-width: 350px;
-        height: 300px;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 5px;
-
+    &__bloc{
         margin-bottom: 39px;
         margin-right: 0;
+        width: 100%;
+        max-width: 350px;
+
         flex-basis: 33%;
 
         @include for-specific-size(2022px){
@@ -241,14 +242,65 @@
         }
 
         @include for-specific-size(848px){
-            flex-basis: 100%;
             max-width: 90%;
-            height: 190px;
+            flex-basis: 100%;
             margin-right: 0;
         }
-
-        
     }
+
+    &__image{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 5px;
+
+        @include for-specific-size(848px){
+            height: 190px;
+        }
+    }
+    
+    &__description{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__title{
+            flex: 1;
+            font-family: "DM Sans";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 31.25px;
+            color: $colorPrimary;
+
+            @include for-size("mobile"){
+                font-size: 14px;
+                line-height: 18.23px;
+            }
+        }
+        &__likes{
+            font-family: "DM Sans";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 31.25px;
+            color: $colorPrimary;
+
+            @include for-size("mobile"){
+                font-size: 14px;
+                line-height: 18.23px;
+            }
+        }
+        &__icon{
+            color: $colorPrimary;
+            font-size: 18px;
+            margin-left: 6px;
+
+            @include for-size("mobile"){
+                font-size: 13px;
+            }
+        }
+    }
+
     & :nth-child(3n){
         margin-right: 0;
     }
