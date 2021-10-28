@@ -24,6 +24,7 @@ window.addEventListener("load", () => {
         buildPictures(data.media);
         const photographer = photographers.find(element => element.id == photographerID);
         displayPhotographerHeader(photographer);
+        displayCountPhotographer(photographer);
 
         sortingImages("Popularité", photos);
       })
@@ -40,6 +41,31 @@ function buildPictures(data){
   data.forEach(element => {
     photos.push(MediaFactory.createMedia(element.id, element.photographerId, element.title, element.image, element.tags, element.likes, element.date, element.price));
   });
+}
+
+function displayCountPhotographer(photographer){
+  const count = document.getElementById("count");
+
+  var render = document.createElement("div");
+  render.classList.add("count__likes");
+  var subrender = document.createElement("p");
+  subrender.classList.add("count__likes__number");
+  subrender.innerHTML = getTotalLikes(photographer);
+  render.appendChild(subrender);
+
+  subrender = document.createElement("i");
+  subrender.classList.add("fas");
+  subrender.classList.add("fa-heart");
+  subrender.classList.add("count__likes__icon");
+  render.appendChild(subrender);
+
+  count.appendChild(render);
+
+  render = document.createElement("p");
+  render.classList.add("count__price");
+  render.innerHTML = photographer.getPrice() + "€/jour";
+
+  count.appendChild(render);
 }
 
 function displayPhotographerHeader(photographer){
@@ -247,4 +273,15 @@ function sortingImages(type, list){
 
   erasePictures();
   displayPictures(photographerID, renderList);
+}
+
+function getTotalLikes(photographer){
+  var total = 0;
+  photos.forEach(element => {
+    if(element.getPhotographerID() == photographer.getID()){
+      total += element.getLikes();
+    }
+  });
+
+  return total;
 }

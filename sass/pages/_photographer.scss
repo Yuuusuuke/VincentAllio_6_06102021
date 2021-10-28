@@ -313,3 +313,42 @@
         justify-content: center;
     }
 }
+
+.count{
+    display: flex;
+    background: #DB8876;
+    position: fixed;
+    bottom: 0;
+    right: 36px;
+
+    padding: 21px 31px;
+
+    &__likes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin-right: 65px;
+
+        &__number{
+            font-family: "DM Sans";
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 31.25px;
+            color: black;
+        }
+        &__icon{
+            margin-left: 6px;
+            font-size: 19px;
+            color: black;
+        }
+    }
+
+    &__price{
+        font-family: "DM Sans";
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 31.25px;
+        color: black;
+    }
+}
