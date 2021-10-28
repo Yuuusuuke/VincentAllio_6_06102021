@@ -4,7 +4,7 @@ const photographerID = new URLSearchParams(query).get('id');
 
 const dataLink = "../js/data.json";
 
-var photographers = [], photos = [];
+var photographers = [], photos = [], sorter = ["Popularité", "Date", "Titre"], DDToggle = false;
 
 
 window.addEventListener("load", () => {
@@ -100,8 +100,6 @@ function displayPhotographerHeader(photographer){
 }
 
 function displayPictures(photographerID, ListPhoto){
-  console.log(photographerID);
-
   let location = document.getElementById("photosTable");
 
   ListPhoto.forEach(element => {
@@ -114,3 +112,73 @@ function displayPictures(photographerID, ListPhoto){
     }
   });
 }
+
+window.onclick = function(event){
+  console.log(event.target);
+  if(!event.target.matches('.sorting__dropdown--content') && DDToggle && !event.target.matches(".sorting__dropdown") && !event.target.matches(".sorting__dropdown__button") && !event.target.matches("#DDButton") && !event.target.matches(".fas")){
+    closeDropdown("none");
+  }
+}
+
+function openDropdown(){
+  var dropdown = document.getElementById("Dropdown");
+  var iconUP = document.getElementById("iconUP");
+  var iconDOWN = document.getElementById("iconDOWN");
+
+  if(DDToggle){
+    closeDropdown("none");
+  }
+  else{
+    dropdown.classList.add("show");
+    iconDOWN.classList.remove("show");
+    iconUP.classList.add("show");
+
+    DDToggle = true;
+  }
+}
+
+function closeDropdown(button){
+  var dropdown = document.getElementById("Dropdown");
+  var iconUP = document.getElementById("iconUP");
+  var iconDOWN = document.getElementById("iconDOWN");
+
+  dropdown.classList.remove("show");
+  iconUP.classList.remove("show");
+  iconDOWN.classList.add("show");
+
+  DDToggle = false;
+
+  if(button == "first"){
+    var tmp = [];
+
+    tmp[0] = sorter[1];
+    tmp[1] = sorter[2];
+    tmp[2] = sorter[0];
+
+    sorter = tmp;
+
+    displayDropdown();
+  }
+  else if(button == "second"){
+    var tmp = [];
+
+    tmp[0] = sorter[2];
+    tmp[1] = sorter[0];
+    tmp[2] = sorter[1];
+
+    sorter = tmp;
+
+    displayDropdown();
+  }
+}
+
+function displayDropdown(){
+  var button = document.getElementById("DDButton"),
+    DDfirst = document.getElementById("DDFirst"),
+    DDSecond = document.getElementById("DDSecond")
+  
+  button.innerHTML = sorter[0];
+  DDfirst.innerHTML = sorter[1];
+  DDSecond.innerHTML = sorter[2];
+}
+
