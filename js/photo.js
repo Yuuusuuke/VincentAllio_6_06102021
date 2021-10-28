@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
         const photographer = photographers.find(element => element.id == photographerID);
         displayPhotographerHeader(photographer);
 
-        displayPictures(photographer.getID(), photos);
+        sortingImages("Popularité", photos);
       })
 });
 
@@ -104,13 +104,21 @@ function displayPictures(photographerID, ListPhoto){
 
   ListPhoto.forEach(element => {
     if((element.getPhotographerID() == photographerID) && (element.getImage() != undefined)){
-      console.log(element.getImage());
+      console.log(element.getTitle());
       let render = document.createElement("img");
       render.classList.add("photos__image");
       render.src = "../Ressources/" + photographerID + "/" + element.getImage();
       location.appendChild(render);
     }
   });
+}
+
+function erasePictures(){
+  let parent = document.getElementById("photosTable");
+
+  while (parent.firstChild){
+    parent.removeChild(parent.firstChild);
+  }
 }
 
 window.onclick = function(event){
@@ -158,6 +166,7 @@ function closeDropdown(button){
     sorter = tmp;
 
     displayDropdown();
+    sortingImages(sorter[0], photos);
   }
   else if(button == "second"){
     var tmp = [];
@@ -169,16 +178,45 @@ function closeDropdown(button){
     sorter = tmp;
 
     displayDropdown();
+    sortingImages(sorter[0], photos);
   }
 }
 
 function displayDropdown(){
   var button = document.getElementById("DDButton"),
     DDfirst = document.getElementById("DDFirst"),
-    DDSecond = document.getElementById("DDSecond")
+    DDSecond = document.getElementById("DDSecond");
   
   button.innerHTML = sorter[0];
   DDfirst.innerHTML = sorter[1];
   DDSecond.innerHTML = sorter[2];
 }
 
+function sortingImages(type, list){
+  var renderList = [];
+
+  list.forEach(element => {
+    if(element.getPhotographerID() == photographerID){
+      renderList.push(element);
+    }
+  });
+
+  if(type == "Date"){
+    renderList.sort(function (a,b){
+      return a.getDate() < b.getDate() ? 1 : -1; // -1:1 older to newer | 1:-1 newer to older
+    })
+  }
+  else if(type == "Popularité"){
+    renderList.sort(function (a,b){
+      return a.getLikes() < b.getLikes() ? 1 : -1; // -1:1 small to bigger | 1:-1 bigger to smaller
+    })
+  }
+  else if(type == "Titre"){
+    renderList.sort(function (a,b){
+      return a.getTitle().localeCompare(b.getTitle());
+    })
+  }
+
+  erasePictures();
+  displayPictures(photographerID, renderList);
+}
