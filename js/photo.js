@@ -110,6 +110,7 @@ function displayPhotographerHeader(photographer){
     element = document.createElement("a");
     element.classList.add("photographerCard__contact__button");
     element.innerHTML = "Contactez-moi";
+    element.onclick = openFormModal;
     subelement.appendChild(element);
     header.appendChild(subelement);
 
@@ -122,6 +123,7 @@ function displayPhotographerHeader(photographer){
     element.classList.add("photographerCard__contact__button");
     element.classList.add("photographerCard__contact--fixed");
     element.innerHTML = "Contactez-moi";
+    element.onclick = openFormModal;
     header.appendChild(element);
 }
 

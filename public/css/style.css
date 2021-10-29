@@ -94,6 +94,115 @@ a {
   color: white;
 }
 
+.formModal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(calc(50vw - 50%), -50%);
+  padding: 15px 35px 35px 35px;
+  background: #DB8876;
+  border-radius: 5px;
+}
+.formModal.show {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .formModal {
+    top: 0;
+    right: 0;
+    transform: translate(0);
+    border-radius: 0;
+    padding: 20px;
+    height: 100vh;
+  }
+}
+.formModal__header {
+  margin-bottom: 19px;
+  width: 100%;
+  display: flex;
+}
+.formModal__title {
+  font-family: "DM Sans";
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 83.33px;
+  color: black;
+  flex: 1;
+}
+@media screen and (max-width: 768px) {
+  .formModal__title {
+    font-size: 36px;
+    line-height: 46.87px;
+  }
+}
+.formModal__icon {
+  font-size: 42px;
+  color: white;
+  margin-top: 20px;
+  margin-left: 108px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .formModal__icon {
+    font-size: 27px;
+    margin-left: 0;
+  }
+}
+.formModal label {
+  font-family: "DM Sans";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 46.87px;
+  color: #312E2E;
+}
+@media screen and (max-width: 768px) {
+  .formModal label {
+    font-size: 24px;
+    line-height: 31.25px;
+  }
+}
+.formModal input[type=text], .formModal input[type=email] {
+  height: 68px;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+@media screen and (max-width: 768px) {
+  .formModal input[type=text], .formModal input[type=email] {
+    height: 52px;
+  }
+}
+.formModal #message {
+  height: 170px;
+}
+@media screen and (max-width: 768px) {
+  .formModal #message {
+    height: 21%;
+  }
+}
+.formModal input[type=submit] {
+  margin-top: 16px;
+  padding: 23px 50px;
+  background: #901C1C;
+  color: white;
+  border-radius: 5px;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.44px;
+  width: 170px;
+  border: 0;
+}
+@media screen and (max-width: 768px) {
+  .formModal input[type=submit] {
+    align-self: center;
+    padding: 5px 50px;
+  }
+}
+
 /* Pages */
 #cardsTable {
   display: flex;
@@ -493,6 +602,11 @@ a {
   bottom: 0;
   right: 36px;
   padding: 21px 31px;
+}
+@media screen and (max-width: 1106px) {
+  .count {
+    display: none;
+  }
 }
 .count__likes {
   display: flex;
