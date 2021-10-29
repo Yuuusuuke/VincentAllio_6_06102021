@@ -164,20 +164,30 @@ a {
     line-height: 31.25px;
   }
 }
-.formModal input[type=text], .formModal input[type=email] {
+.formModal input[type=text], .formModal input[type=email],
+.formModal #message {
   height: 68px;
-  border: 0;
+  border: solid 2px white;
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 5px;
+  padding: 0 5px;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 46.87px;
+  outline: none;
 }
 @media screen and (max-width: 768px) {
-  .formModal input[type=text], .formModal input[type=email] {
+  .formModal input[type=text], .formModal input[type=email],
+.formModal #message {
     height: 52px;
   }
 }
 .formModal #message {
   height: 170px;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
 @media screen and (max-width: 768px) {
   .formModal #message {
