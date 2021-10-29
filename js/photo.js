@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const query = window.location.search;
 
 const photographerID = new URLSearchParams(query).get('id');
@@ -211,10 +213,9 @@ function closeDropdown(button){
   iconDOWN.classList.add("show");
 
   DDToggle = false;
+  var tmp = [];
 
   if(button == "first"){
-    var tmp = [];
-
     tmp[0] = sorter[1];
     tmp[1] = sorter[2];
     tmp[2] = sorter[0];
@@ -225,8 +226,6 @@ function closeDropdown(button){
     sortingImages(sorter[0], photos);
   }
   else if(button == "second"){
-    var tmp = [];
-
     tmp[0] = sorter[2];
     tmp[1] = sorter[0];
     tmp[2] = sorter[1];

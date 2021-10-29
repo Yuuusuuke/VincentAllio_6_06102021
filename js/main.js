@@ -1,11 +1,12 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const dataLink = "./js/data.json";
 
 const table = document.getElementById("cardsTable");
 
 var photographers = [];
 
-/* Filters */
-var portrait = false, art = false, fashion = false, architecture = false, travel = false, sport = false, animals = false, events = false;
+
 
 window.addEventListener("load", () => {
     fetch(dataLink)

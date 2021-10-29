@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function openFormModal(){
     document.getElementById("formModal").classList.add("show");
 }

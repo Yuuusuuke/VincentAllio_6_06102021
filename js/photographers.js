@@ -36,6 +36,7 @@ class Photographer{
     }
 }
 
+// eslint-disable-next-line no-unused-vars
 const PhotographerFactory = {
     createPhotographer: (id, name, city, country, tags, description, price, portrait) => new Photographer(id, name, city, country, tags, description, price, portrait)
 }

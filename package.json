@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Yuuusuuke/VincentAllio_6_06102021/issues"
   },
-  "homepage": "https://github.com/Yuuusuuke/VincentAllio_6_06102021#readme"
+  "homepage": "https://github.com/Yuuusuuke/VincentAllio_6_06102021#readme",
+  "devDependencies": {
+    "eslint": "^8.1.0"
+  }
 }

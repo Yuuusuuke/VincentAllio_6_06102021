@@ -1,3 +1,9 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* Filters */
+var portrait = false, art = false, fashion = false, architecture = false, travel = false, sport = false, animals = false, events = false;
+
 /* Active a filter and display them */
 function toggleFilter(filter){
     switch(filter){
