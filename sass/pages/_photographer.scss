@@ -323,6 +323,10 @@
 
     padding: 21px 31px;
 
+    @include for-specific-size(1106px){
+        display: none;
+    }
+
     &__likes{
         display: flex;
         flex-direction: row;
