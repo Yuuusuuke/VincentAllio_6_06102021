@@ -97,6 +97,7 @@ a {
 .formModal {
   display: none;
   flex-direction: column;
+  z-index: 15;
   position: fixed;
   top: 50%;
   left: 0;
@@ -201,6 +202,20 @@ a {
     align-self: center;
     padding: 5px 50px;
   }
+}
+
+.smoke {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(196, 196, 196, 0.4);
+  z-index: 10;
+}
+.smoke.show {
+  display: block;
 }
 
 /* Pages */

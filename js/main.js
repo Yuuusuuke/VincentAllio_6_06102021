@@ -7,7 +7,6 @@ const table = document.getElementById("cardsTable");
 var photographers = [];
 
 
-
 window.addEventListener("load", () => {
     fetch(dataLink)
       .then((response) => {
