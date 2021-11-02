@@ -30,6 +30,9 @@ window.addEventListener("load", () => {
 
         sortingImages("Popularité", photos);
       })
+      setTimeout(function loaderAnim() {
+        loader.className += " hidden";
+      }, 2000);
 });
 
 /* Create Photographers object and push them in an array */

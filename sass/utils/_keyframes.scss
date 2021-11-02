@@ -1,0 +1,28 @@
+@keyframes fadeout {
+    0% {
+        transform: scale(1);
+        filter: opacity(1);
+    }
+
+    80%,
+    100% {
+        transform: scale(0);
+        filter: opacity(0); // Show the circle behind
+    }
+}
+
+@keyframes fadeoutLoader {
+    50% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+        height: 100vh;
+    }
+
+    100% {
+        // Rescale the loader to hide it
+        height: 0px;
+    }
+}

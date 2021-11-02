@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-        <title>Fisheye</title>
+    <title>Fisheye</title>
 
-        <link rel="stylesheet" href="public/css/prefixed/style.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/prefixed/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <script src="https://kit.fontawesome.com/3f34b0042f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3f34b0042f.js" crossorigin="anonymous"></script>
 
-    </head>
+</head>
 
-        
 
-    <body>
-        <header class="header">
-            <a href="index.html" class="header__logo">
-                <img role="img" src="Ressources/logoFisheye.png" alt="Fisheye Home page" />
-            </a>
-            <nav role="navigation" aria-label="photographer categories" class="header__navigation">
-                <a class="header__navigation__tag tag portrait" onClick="toggleFilter('portrait')">#Portrait</a>
-                <a class="header__navigation__tag tag art" onClick="toggleFilter('art')">#Art</a>
-                <a class="header__navigation__tag tag fashion" onClick="toggleFilter('fashion')">#Fashion</a>
-                <a class="header__navigation__tag tag architecture" onClick="toggleFilter('architecture')">#Architecture</a>
-                <a class="header__navigation__tag tag travel" onClick="toggleFilter('travel')">#Travel</a>
-                <a class="header__navigation__tag tag sport" onClick="toggleFilter('sport')">#Sport</a>
-                <a class="header__navigation__tag tag animals" onClick="toggleFilter('animals')">#Animals</a>
-                <a class="header__navigation__tag tag events" onClick="toggleFilter('events')">#Events</a>
-            </nav>
 
-            <h1 class="header__title">Nos photographes</h1>
-        </header>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader__figure">
+            <span class="loader__figure__circle circle--1"></span>
+            <span class="loader__figure__circle circle--2"></span>
+            <span class="loader__figure__circle circle--3"></span>
+            <span class="loader__figure__circle circle--4"></span>
+            <span class="loader__figure__circle circle--5"></span>
+            <span class="loader__figure__circle circle--6"></span>
+            <span class="loader__figure__circle circle--7"></span>
+            <span class="loader__figure__circle circle--8"></span>
+            <span class="loader__figure__circle circle--9"></span>
+            <span class="loader__figure__circle circle--10"></span>
+        </div>
+    </div>
 
-        <nav role="navigation" aria-label="photographer categories" class="header__navigation header__navigation--wrap">
+
+    <header class="header">
+        <a href="index.html" class="header__logo">
+            <img role="img" src="Ressources/logoFisheye.png" alt="Fisheye Home page" />
+        </a>
+        <nav role="navigation" aria-label="photographer categories" class="header__navigation">
             <a class="header__navigation__tag tag portrait" onClick="toggleFilter('portrait')">#Portrait</a>
             <a class="header__navigation__tag tag art" onClick="toggleFilter('art')">#Art</a>
             <a class="header__navigation__tag tag fashion" onClick="toggleFilter('fashion')">#Fashion</a>
@@ -46,15 +49,29 @@
             <a class="header__navigation__tag tag events" onClick="toggleFilter('events')">#Events</a>
         </nav>
 
-        <main id="cardsTable">
+        <h1 class="header__title">Nos photographes</h1>
+    </header>
 
-        </main>
+    <nav role="navigation" aria-label="photographer categories" class="header__navigation header__navigation--wrap">
+        <a class="header__navigation__tag tag portrait" onClick="toggleFilter('portrait')">#Portrait</a>
+        <a class="header__navigation__tag tag art" onClick="toggleFilter('art')">#Art</a>
+        <a class="header__navigation__tag tag fashion" onClick="toggleFilter('fashion')">#Fashion</a>
+        <a class="header__navigation__tag tag architecture" onClick="toggleFilter('architecture')">#Architecture</a>
+        <a class="header__navigation__tag tag travel" onClick="toggleFilter('travel')">#Travel</a>
+        <a class="header__navigation__tag tag sport" onClick="toggleFilter('sport')">#Sport</a>
+        <a class="header__navigation__tag tag animals" onClick="toggleFilter('animals')">#Animals</a>
+        <a class="header__navigation__tag tag events" onClick="toggleFilter('events')">#Events</a>
+    </nav>
 
-        
-        <script src="js/filters.js"></script>
-        <script src="js/photographers.js"></script>
-        <script src="js/main.js"></script>
-        
-    </body>
+    <main id="cardsTable">
+
+    </main>
+
+
+    <script src="js/filters.js"></script>
+    <script src="js/photographers.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 
 </html>

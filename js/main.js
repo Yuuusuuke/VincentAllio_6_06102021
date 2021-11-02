@@ -11,7 +11,7 @@ const query = window.location.search;
 const filter = [];
 
 
-
+const loader = document.getElementById("loader");
 
 window.addEventListener("load", () => {
     fetch(dataLink)
@@ -35,6 +35,9 @@ window.addEventListener("load", () => {
             displayAllPhotographers();
           }
       })
+      setTimeout(function loaderAnim() {
+        loader.className += " hidden";
+      }, 2000);
 });
 
 /* Create Photographers object and push them in an array */

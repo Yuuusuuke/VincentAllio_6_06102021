@@ -1,0 +1,63 @@
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    @include centerElement;
+    z-index: 10;
+    background-color: white;
+    animation: fadeoutLoader 1s linear forwards 2.5s;
+
+    &__figure {
+        position: relative;
+        width: 80px;
+        height: 80px;
+
+        &__circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                background: $colorSecondary;
+                border-radius: 50%;
+                transform: scale(0);
+                animation: fadeout 1s linear 3;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                background: $colorPrimary;
+                border-radius: 50%;
+                transform: scale(0);
+                animation: fadeout 1s linear 3;
+            }
+
+            @for $i from 1 through 10 {
+
+                // Space circles as a big common circle and delay animation to make a "spin"
+                &.circle--#{$i} {
+                    transform: rotate(calc(36deg * #{$i}));
+
+                    &::before,
+                    &::after {
+                        animation-delay: calc(0.1s * #{$i});
+                    }
+                }
+
+            }
+        }
+    }
+}
