@@ -16,9 +16,6 @@ window.addEventListener("load", () => {
           return response.json();
         } else {
           console.log(`Une erreur de type ${response.status}  est survenu ! `);
-          setTimeout(function loaderAnim() {
-            loader.className += " hidden";
-          }, 2000);
         }
       })
       .then((data) => {
@@ -30,9 +27,6 @@ window.addEventListener("load", () => {
 
         sortingImages("Popularité", photos);
       })
-      setTimeout(function loaderAnim() {
-        loader.className += " hidden";
-      }, 2000);
 });
 
 /* Create Photographers object and push them in an array */
@@ -138,7 +132,6 @@ function displayPictures(photographerID, ListPhoto){
 
   ListPhoto.forEach(element => {
     if((element.getPhotographerID() == photographerID) && (element.getImage() != undefined)){
-      console.log(element.getTitle());
       let imgbloc = document.createElement("div");
       imgbloc.classList.add("photos__bloc");
       let render = document.createElement("img");
@@ -165,6 +158,7 @@ function displayPictures(photographerID, ListPhoto){
       subrender.classList.add("fas");
       subrender.classList.add("fa-heart");
       subrender.classList.add("photos__description__icon");
+      subrender.onclick = toggleFav;
       render.appendChild(subrender);
 
       imgbloc.appendChild(render);
@@ -184,7 +178,6 @@ function erasePictures(){
 }
 
 window.onclick = function(event){
-  console.log(event.target);
   if(!event.target.matches('.sorting__dropdown--content') && DDToggle && !event.target.matches(".sorting__dropdown") && !event.target.matches(".sorting__dropdown__button") && !event.target.matches("#DDButton") && !event.target.matches(".fas")){
     closeDropdown("none");
   }
@@ -289,4 +282,26 @@ function getTotalLikes(photographer){
   });
 
   return total;
+}
+
+function toggleFav(node){
+  var counter = node.path[1].childNodes[1];
+  var title = node.path[1].childNodes[0].innerHTML;
+  var startCount = 0;
+  var found = false, i=0;
+
+  while(!found){
+    if((photos[i].getTitle() == title) && photos[i].getPhotographerID() == photographerID){
+      found = true;
+      startCount = photos[i].getLikes();
+    }
+    i++;
+  }
+
+  if(startCount == Number(counter.innerHTML)){
+    counter.innerHTML = Number(counter.innerHTML) + 1;
+  }
+  else{
+    counter.innerHTML = Number(counter.innerHTML) - 1;
+  }
 }

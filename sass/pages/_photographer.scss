@@ -1,4 +1,4 @@
-.photographerCard{
+.photographerCard {
     margin: 40px 7% 0 7%;
     padding: 50px;
 
@@ -7,12 +7,12 @@
 
     background-color: #FAFAFA;
 
-    @include for-size("mobile"){
+    @include for-size("mobile") {
         background: white;
         padding: 0;
     }
 
-    &__image{
+    &__image {
         width: 200px;
         height: 200px;
         border-radius: 50%;
@@ -20,19 +20,19 @@
 
         align-self: center;
 
-        @include for-size("mobile"){
+        @include for-size("mobile") {
             width: 100px;
             height: 100px;
         }
     }
 
-    &__contact{
+    &__contact {
         flex: 1;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
 
-        &__button{
+        &__button {
             background: $colorPrimary;
             border-radius: 5px;
             padding: 21px 11px;
@@ -48,7 +48,7 @@
             cursor: pointer;
         }
 
-        &--fixed{
+        &--fixed {
             display: none;
             position: fixed;
             bottom: 30px;
@@ -58,44 +58,47 @@
             padding: 7px 19px;
             margin: 0;
 
-            @include for-specific-size(1106px){
+            @include for-specific-size(1106px) {
                 display: block;
             }
         }
 
-        @include for-specific-size(1106px){
+        @include for-specific-size(1106px) {
             display: none;
         }
-        
+
     }
 
-    &__text{
+    &__text {
         align-self: center;
-        &__name{
+
+        &__name {
             font-family: "DM Sans";
             font-size: 64px;
             font-weight: 400;
             color: $colorSecondary;
             line-height: 83.33px;
 
-            @include for-size("mobile"){
+            @include for-size("mobile") {
                 font-size: 36px;
                 line-height: 46.87px;
             }
         }
-        &__location{
+
+        &__location {
             font-family: "DM Sans";
             font-size: 24px;
             font-weight: 400;
             color: $colorPrimary;
             line-height: 31.25px;
 
-            @include for-size("mobile"){
+            @include for-size("mobile") {
                 font-size: 13px;
                 line-height: 13.93px;
             }
         }
-        &__description{
+
+        &__description {
             font-family: "DM Sans";
             font-size: 18px;
             font-weight: 400;
@@ -103,22 +106,23 @@
             line-height: 23.44px;
             margin: 19px 0 19px 0;
 
-            @include for-size("mobile"){
+            @include for-size("mobile") {
                 font-size: 13px;
                 line-height: 16.93px;
             }
         }
-        &__filters{
+
+        &__filters {
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
 
-            &__tag{
+            &__tag {
                 font-size: 18px;
                 font-weight: 500;
                 line-height: 23px;
 
-                @include for-size("mobile"){
+                @include for-size("mobile") {
                     font-size: 13px;
                     line-height: 16.93px;
                 }
@@ -127,16 +131,16 @@
     }
 }
 
-.sorting{
+.sorting {
     display: flex;
     margin: 9px 7% 0 7%;
     align-items: center;
 
-    @include for-size("mobile"){
+    @include for-size("mobile") {
         display: none;
     }
 
-    &__text{
+    &__text {
         font-family: "DM Sans";
         font-size: 18px;
         font-weight: 700;
@@ -144,7 +148,8 @@
         color: black;
         margin-right: 25px;
     }
-    &__dropdown{
+
+    &__dropdown {
         font-family: "DM Sans";
         font-size: 18px;
         font-weight: 700;
@@ -158,23 +163,24 @@
         min-width: 130.91px;
         cursor: pointer;
 
-        &__button{
+        &__button {
             display: flex;
 
-            & p{
+            & p {
                 flex: 1;
             }
-            &__icon{
+
+            &__icon {
                 margin-left: 26px;
                 display: none !important;
 
-                &.show{
+                &.show {
                     display: inline-block !important;
                 }
             }
         }
 
-        &--content{
+        &--content {
             display: none;
             position: absolute;
             z-index: 1;
@@ -184,20 +190,20 @@
             background: $colorPrimary;
             border-radius: 0 0 5px 5px;
 
-            & a{
+            & a {
                 color: white;
                 padding: 14px 20px;
                 text-decoration: none;
                 display: block;
-                
+
             }
 
-            &.show{
+            &.show {
                 display: block;
             }
         }
 
-        &__divider{
+        &__divider {
             border: solid 1px white;
             margin: 0px 10px;
             width: 85%;
@@ -205,17 +211,17 @@
     }
 }
 
-.photos{
+.photos {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 50px 7% 0 7%;
 
-    @include for-size("mobile"){
+    @include for-size("mobile") {
         margin: 45px 0 0 0;
     }
 
-    &__bloc{
+    &__bloc {
         margin-bottom: 39px;
         margin-right: 0;
         width: 100%;
@@ -223,49 +229,51 @@
 
         flex-basis: 33%;
 
-        @include for-specific-size(2022px){
+        @include for-specific-size(2022px) {
             margin-right: 6.5%;
         }
 
-        @include for-specific-size(1403px){
+        @include for-specific-size(1403px) {
             flex-basis: 50%;
             margin-right: 15px;
         }
 
-        @include for-specific-size(1255px){
+        @include for-specific-size(1255px) {
             margin-left: 15px;
         }
 
-        @include for-specific-size(1200px){
+        @include for-specific-size(1200px) {
             margin-left: 0;
             margin-right: 0;
         }
 
-        @include for-specific-size(848px){
+        @include for-specific-size(848px) {
             max-width: 90%;
             flex-basis: 100%;
             margin-right: 0;
         }
     }
 
-    &__image{
+    &__image {
         width: 100%;
         height: 300px;
         object-fit: cover;
         object-position: top;
         border-radius: 5px;
 
-        @include for-specific-size(848px){
+        cursor: pointer;
+
+        @include for-specific-size(848px) {
             height: 190px;
         }
     }
-    
-    &__description{
+
+    &__description {
         display: flex;
         flex-direction: row;
         align-items: center;
 
-        &__title{
+        &__title {
             flex: 1;
             font-family: "DM Sans";
             font-size: 24px;
@@ -273,48 +281,52 @@
             line-height: 31.25px;
             color: $colorPrimary;
 
-            @include for-size("mobile"){
+            @include for-size("mobile") {
                 font-size: 14px;
                 line-height: 18.23px;
             }
         }
-        &__likes{
+
+        &__likes {
             font-family: "DM Sans";
             font-size: 24px;
             font-weight: 400;
             line-height: 31.25px;
             color: $colorPrimary;
 
-            @include for-size("mobile"){
+            @include for-size("mobile") {
                 font-size: 14px;
                 line-height: 18.23px;
             }
         }
-        &__icon{
+
+        &__icon {
             color: $colorPrimary;
             font-size: 18px;
             margin-left: 6px;
 
-            @include for-size("mobile"){
+            cursor: pointer;
+
+            @include for-size("mobile") {
                 font-size: 13px;
             }
         }
     }
 
-    & :nth-child(3n){
+    & :nth-child(3n) {
         margin-right: 0;
     }
 
-    @include for-specific-size(1255px){
+    @include for-specific-size(1255px) {
         justify-content: space-evenly;
     }
 
-    @include for-specific-size(848px){
+    @include for-specific-size(848px) {
         justify-content: center;
     }
 }
 
-.count{
+.count {
     display: flex;
     background: #DB8876;
     position: fixed;
@@ -323,32 +335,33 @@
 
     padding: 21px 31px;
 
-    @include for-specific-size(1106px){
+    @include for-specific-size(1106px) {
         display: none;
     }
 
-    &__likes{
+    &__likes {
         display: flex;
         flex-direction: row;
         align-items: center;
 
         margin-right: 65px;
 
-        &__number{
+        &__number {
             font-family: "DM Sans";
             font-size: 24px;
             font-weight: 500;
             line-height: 31.25px;
             color: black;
         }
-        &__icon{
+
+        &__icon {
             margin-left: 6px;
             font-size: 19px;
             color: black;
         }
     }
 
-    &__price{
+    &__price {
         font-family: "DM Sans";
         font-size: 24px;
         font-weight: 500;

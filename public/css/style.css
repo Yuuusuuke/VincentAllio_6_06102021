@@ -688,6 +688,7 @@ a {
   object-fit: cover;
   object-position: top;
   border-radius: 5px;
+  cursor: pointer;
 }
 @media screen and (max-width: 848px) {
   .photos__image {
@@ -730,6 +731,7 @@ a {
   color: #901C1C;
   font-size: 18px;
   margin-left: 6px;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .photos__description__icon {
