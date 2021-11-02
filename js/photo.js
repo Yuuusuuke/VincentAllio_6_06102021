@@ -101,6 +101,7 @@ function displayPhotographerHeader(photographer){
         subelement.classList.add("photographerCard__text__filters__tag");
         subelement.classList.add("tag");
         subelement.innerHTML = "#" + tag;
+        subelement.href = "../index.html?filter=" + tag;
         terelement.appendChild(subelement);
     });
     element.appendChild(terelement);

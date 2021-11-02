@@ -6,6 +6,12 @@ const table = document.getElementById("cardsTable");
 
 var photographers = [];
 
+const query = window.location.search;
+
+const filter = [];
+
+
+
 
 window.addEventListener("load", () => {
     fetch(dataLink)
@@ -21,7 +27,13 @@ window.addEventListener("load", () => {
       })
       .then((data) => {
           buildPhotographers(data.photographers);
-          displayAllPhotographers();
+          if(query != ""){
+            filter.push(new URLSearchParams(query).get('filter'));
+            renderFilter(filter);
+          }
+          else{
+            displayAllPhotographers();
+          }
       })
 });
 
