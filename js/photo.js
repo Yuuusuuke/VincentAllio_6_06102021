@@ -285,6 +285,7 @@ function getTotalLikes(photographer){
 }
 
 function toggleFav(node){
+  var totalCount = document.getElementsByClassName("count__likes__number")[0];
   var counter = node.path[1].childNodes[1];
   var title = node.path[1].childNodes[0].innerHTML;
   var startCount = 0;
@@ -300,8 +301,10 @@ function toggleFav(node){
 
   if(startCount == Number(counter.innerHTML)){
     counter.innerHTML = Number(counter.innerHTML) + 1;
+    totalCount.innerHTML = Number(totalCount.innerHTML) + 1;
   }
   else{
     counter.innerHTML = Number(counter.innerHTML) - 1;
+    totalCount.innerHTML = Number(totalCount.innerHTML) - 1;
   }
 }
