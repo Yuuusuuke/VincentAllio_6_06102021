@@ -138,6 +138,7 @@ function displayPictures(photographerID, ListPhoto){
 
       render.classList.add("photos__image");
       render.src = "../Ressources/" + photographerID + "/" + element.getImage();
+      render.setAttribute('onclick', 'openLightbox("'+ render.src +'", "'+ element.getTitle() +'")');
 
       imgbloc.appendChild(render);
 

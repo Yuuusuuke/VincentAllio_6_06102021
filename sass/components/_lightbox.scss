@@ -1,0 +1,68 @@
+.lightbox {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(calc(50vw - 50%), -50%);
+
+    padding: 60px 9% 60px 9%;
+
+    &__image {
+        margin: 0 34px;
+
+        & img {
+            max-height: 90vh;
+            width: 100%;
+
+            border-radius: 5px;
+        }
+
+        &__title {
+            color: $colorPrimary;
+            font-family: "DM Sans";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 31.25px;
+            margin-top: 12px;
+
+            @include for-size("mobile") {
+                font-size: 14px;
+                line-height: 18.23px;
+            }
+        }
+
+        @include for-size("mobile") {
+            margin: 0 9px;
+        }
+    }
+
+    &__icon {
+        color: $colorPrimary;
+        font-size: 48px;
+        cursor: pointer;
+
+        @include for-size("mobile") {
+            font-size: 15px;
+        }
+
+        &--close {
+            font-size: 42px;
+            position: absolute;
+            top: 60px;
+            right: 9%;
+
+            @include for-size("mobile") {
+                font-size: 15px;
+            }
+        }
+    }
+
+    &.show {
+        display: flex;
+    }
+}

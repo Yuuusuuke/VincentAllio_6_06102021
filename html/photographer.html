@@ -17,6 +17,7 @@
 
 <body>
     <!-- Loader -->
+    <!--
     <div class="loader">
         <div class="loader__figure">
             <span class="loader__figure__circle circle--1"></span>
@@ -30,7 +31,7 @@
             <span class="loader__figure__circle circle--9"></span>
             <span class="loader__figure__circle circle--10"></span>
         </div>
-    </div>
+    </div>-->
 
     <header class="header">
         <a href="../index.html" class="header__logo">
@@ -99,11 +100,20 @@
             <input type="submit" onclick="formModalSubmit(event)" name="send" value="Envoyer">
         </form>
 
-
+        <section class="lightbox" id="lightbox">
+            <i class="fas fa-chevron-left lightbox__icon" id="leftArrow"></i>
+            <div class="lightbox__image">
+                <img src="../Ressources/195/Architecture_On_a_hill.jpg" id="lightboxImage" />
+                <p class="lightbox__image__title" id="lightboxTitle">Arc-en-ciel</p>
+            </div>
+            <i class="fas fa-chevron-right lightbox__icon" id="rightArrow"></i>
+            <i class="fas fa-times lightbox__icon lightbox__icon--close" onclick="closeLightbox()"></i>
+        </section>
 
     </main>
 
     <script src="../js/form.js"></script>
+    <script src="../js/lightbox.js"></script>
     <script src="../js/media.js"></script>
     <script src="../js/photographers.js"></script>
     <script src="../js/photo.js"></script>

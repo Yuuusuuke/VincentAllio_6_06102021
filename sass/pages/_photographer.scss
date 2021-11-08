@@ -215,7 +215,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 50px 7% 0 7%;
+    margin: 50px 7% 300px 7%;
 
     @include for-size("mobile") {
         margin: 45px 0 0 0;
