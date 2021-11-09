@@ -20,8 +20,9 @@ window.addEventListener("load", () => {
       })
       .then((data) => {
         buildPhotographers(data.photographers);
-        buildPictures(data.media);
         const photographer = photographers.find(element => element.id == photographerID);
+        buildPictures(data.media, photographerID);
+        
         displayPhotographerHeader(photographer);
         displayCountPhotographer(photographer);
 
@@ -36,9 +37,11 @@ function buildPhotographers(data){
   });
 }
 
-function buildPictures(data){
+function buildPictures(data, photographer){
   data.forEach(element => {
-    photos.push(MediaFactory.createMedia(element.id, element.photographerId, element.title, element.image, element.tags, element.likes, element.date, element.price));
+    if(element.photographerId == photographer){
+      photos.push(MediaFactory.createMedia(element.id, element.photographerId, element.title, element.image, element.tags, element.likes, element.date, element.price));
+    }
   });
 }
 
@@ -138,7 +141,7 @@ function displayPictures(photographerID, ListPhoto){
 
       render.classList.add("photos__image");
       render.src = "../Ressources/" + photographerID + "/" + element.getImage();
-      render.setAttribute('onclick', 'openLightbox("'+ render.src +'", "'+ element.getTitle() +'")');
+      render.setAttribute('onclick', 'openLightbox("'+ element.getImage() +'", "'+ element.getTitle() +'")');
 
       imgbloc.appendChild(render);
 
@@ -249,9 +252,7 @@ function sortingImages(type, list){
   var renderList = [];
 
   list.forEach(element => {
-    if(element.getPhotographerID() == photographerID){
-      renderList.push(element);
-    }
+    renderList.push(element);
   });
 
   if(type == "Date"){
@@ -272,6 +273,7 @@ function sortingImages(type, list){
 
   erasePictures();
   displayPictures(photographerID, renderList);
+  photos = renderList;
 }
 
 function getTotalLikes(photographer){
