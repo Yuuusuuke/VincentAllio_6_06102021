@@ -17,6 +17,13 @@ function resetErrors(){
     borderColorInput(document.getElementById("message"), "white");
 }
 
+function displayContentForm(firstname, lastname, email, message){
+    console.log("Firstname : " + firstname.value);
+    console.log("Lastname : " + lastname.value);
+    console.log("Email : " + email.value);
+    console.log("Message : " + message.value);
+}
+
 /* Form Validators */
 function isValidFirstName(element){
     return (element.value !== null && element.value.length >= 2);
@@ -69,5 +76,6 @@ function formModalSubmit(event){
 
     if(valid){
         closeFormModal();
+        displayContentForm(firstname,lastname,email,message);
     }
 }

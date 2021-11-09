@@ -703,7 +703,7 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 50px 7% 300px 7%;
+  margin: 50px 7% 70px 7%;
 }
 @media screen and (max-width: 768px) {
   .photos {
