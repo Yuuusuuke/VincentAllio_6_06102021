@@ -1,5 +1,5 @@
 class Photographer{
-    constructor(id, name, city, country, tags, description, price, portrait){
+    constructor(id, name, city, country, tags, description, price, portrait, altText){
         this.id = id;
         this.name = name;
         this.city = city;
@@ -8,6 +8,7 @@ class Photographer{
         this.description = description;
         this.price = price;
         this.portrait = portrait;
+        this.altText = altText;
     }
 
     getID(){
@@ -34,9 +35,12 @@ class Photographer{
     getPortrait(){
         return this.portrait;
     }
+    getAltText(){
+        return this.altText;
+    }
 }
 
 // eslint-disable-next-line no-unused-vars
 const PhotographerFactory = {
-    createPhotographer: (id, name, city, country, tags, description, price, portrait) => new Photographer(id, name, city, country, tags, description, price, portrait)
+    createPhotographer: (id, name, city, country, tags, description, price, portrait, altText) => new Photographer(id, name, city, country, tags, description, price, portrait, altText)
 }

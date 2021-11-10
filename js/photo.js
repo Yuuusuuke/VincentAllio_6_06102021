@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
 /* Create Photographers object and push them in an array */
 function buildPhotographers(data){
   data.forEach(element => {
-    photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait));
+    photographers.push(PhotographerFactory.createPhotographer(element.id, element.name, element.city, element.country, element.tags, element.tagline, element.price, element.portrait, element.altText));
   });
 }
 
@@ -113,6 +113,7 @@ function displayPhotographerHeader(photographer){
     element = document.createElement("a");
     element.classList.add("photographerCard__contact__button");
     element.innerHTML = "Contactez-moi";
+    element.setAttribute('tabindex', 2);
     element.onclick = openFormModal;
     subelement.appendChild(element);
     header.appendChild(subelement);
@@ -120,21 +121,25 @@ function displayPhotographerHeader(photographer){
     element = document.createElement("img");
     element.classList.add("photographerCard__image");
     element.src = "../Ressources/Photographers ID Photos/" + photographer.getPortrait();
+    element.setAttribute('alt', photographer.getAltText());
     header.appendChild(element);
 
     element = document.createElement("a");
     element.classList.add("photographerCard__contact__button");
     element.classList.add("photographerCard__contact--fixed");
     element.innerHTML = "Contactez-moi";
+    element.setAttribute('tabindex', 2);
     element.onclick = openFormModal;
     header.appendChild(element);
 }
 
 function displayPictures(photographerID, ListPhoto){
   let location = document.getElementById("photosTable");
+  let tabindex = 3;
 
   ListPhoto.forEach(element => {
     if((element.getPhotographerID() == photographerID) && (element.getImage() != undefined)){
+      tabindex++;
       let imgbloc = document.createElement("div");
       imgbloc.classList.add("photos__bloc");
       let render = document.createElement("img");
@@ -142,7 +147,8 @@ function displayPictures(photographerID, ListPhoto){
       render.classList.add("photos__image");
       render.src = "../Ressources/" + photographerID + "/" + element.getImage();
       render.setAttribute('onclick', 'openLightbox("'+ element.getImage() +'", "'+ element.getTitle() +'")');
-      render.alt = element.getTitle() + "pictures";
+      render.setAttribute('alt', element.getTitle() + " pictures");
+      render.setAttribute('tabindex', tabindex);
 
       imgbloc.appendChild(render);
 
