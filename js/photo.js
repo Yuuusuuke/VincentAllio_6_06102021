@@ -149,6 +149,11 @@ function displayPictures(photographerID, ListPhoto){
       render.setAttribute('onclick', 'openLightbox("'+ element.getImage() +'", "'+ element.getTitle() +'")');
       render.setAttribute('alt', element.getTitle() + " pictures");
       render.setAttribute('tabindex', tabindex);
+      render.addEventListener('keydown', function(event){
+        if(event.key == "Enter"){
+          openLightbox(element.getImage(), element.getTitle());
+        }
+      });
 
       imgbloc.appendChild(render);
 
